@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh_CN"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="msapplication-tap-highlight" content="no">
+<title>我们楼——购物车</title>
+<link href="public/css/reset.css" type="text/css" rel="Stylesheet">
+<link href="public/css/bootstrap.css" type="text/css" rel="Stylesheet">
+<link href="public/css/m.css" type="text/css" rel="Stylesheet">
+<link href="public/css/m1.css" type="text/css" rel="Stylesheet">
+<link href="public/css/iconfont.css" type="text/css" rel="Stylesheet">
+<script src="public/js/jquery-1.js"></script>
+<script src="public/js/test.js"></script>
+</head>
+<body class="bg_lightgray">
+<div id="Main">
+
+	<div class="top_nav">
+		<div class="left"><a href="javascript:history.go(-1);"><img width="25px" src="public/images/jt.png"></a></div>
+		<div class="middle">
+			购物车
+		</div>
+		<div class="right"> </div>
+	</div>
+	<ul class="goods_cart_list" id="_goodlist">
+	        <li class="clearfix">
+			  <div class="radiobox"><i class="radio_pic"></i></div>
+			  <div class="picbox"><img src="uploads/allimg/images/r1.jpg"></div>
+			  <div class="conbox">
+				<h1 class="name"><a href="#" style="color:#333333;">商品名称</a></h1>
+				<h2 class="price">
+										<span class="true">￥<span class="value">8.50</span></span>
+					<span class="market">超市价:￥9.90</span>									</h2>
+				<div class="count_bar">
+					<button>-</button>
+					<input oninput="OnInput('2015060343000018')" id="buycart_2015060343000018" value="2" type="text">
+					<button>+</button>
+				</div>
+			  </div>
+        </li>
+            </ul>
+    <div class="prompt"></div>
+    
+	<div class="sidebar" >
+		<div class="sum_total">
+		  <label><i class="radio_pic"></i> 全选</label>
+		  <span>实付款：<em>￥<span class="final_tatal">0.00</span></em></span>
+		  <button class="btn btn_azure" id="btn_remove_list">移除</button>
+		  <button class="btn btn_blue" id="_todo">结算</button>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	
+
+	/*增减板*/
+	$('.count_bar button').on('click',function(){
+		var n = ($(this).index() == 0 )?-1:1;
+		var _text = $(this).closest('div').find("input");
+		value=Number(_text.val());
+		value+=n;
+		if(value<1){	// 如果数值为1则不做运算
+			return false;
+		}
+
+		$.post('index.php?c=product&a=buycartquantity',{
+	        'product_no':$(this).closest('li').data('productno'),
+	        'quantity':value
+	  	},function(data){
+	      if(data.result){
+			_text.val(value);	//改写增减板中间的数字
+			sum($('#_goodlist'));
+	      }else{
+	      	showalertmsg(data.error.msg,2000,'no');
+			return;
+	      }
+	 	 },'json')
+		return false;
+	});
+
+	/*自定义加减操作*/
+	$('.count_bar input').on('click',function(){
+		return false;
+	});
+
+
+
+	/*全选checkbox的行为*/
+	$(".sum_total i").on('click', function(){
+		if($(this).attr("class")=="radio_active"){
+			$(this).removeClass('radio_active').addClass('radio_pic');
+			$("#_goodlist i").removeClass('radio_active').addClass('radio_pic');
+		}else{
+			$(this).removeClass('radio_pic').addClass('radio_active');
+			$("#_goodlist i").removeClass('radio_pic').addClass('radio_active');
+		}
+		sum($('#_goodlist'));
+	});
+
+	$('#_goodlist li').on('click',function(){
+		var $this = $(this).find('i');
+		if($this.attr('class') == 'radio_active'){
+			$this.removeClass('radio_active').addClass('radio_pic');
+		}else{
+			$this.removeClass('radio_pic').addClass('radio_active');
+		}
+		sum($('#_goodlist'));
+	})
+
+	sum($('#_goodlist'));
+
+});
+	
+// 选定操作
+function OnInput(productnos){
+	if($(".count_bar input").val() < 1){
+		return false;
+	}
+	$.post('index.php?c=product&a=buycartquantity',{
+        'product_no':productnos,
+        'quantity':$("#buycart_"+productnos).val()
+  	},function(data){
+      if(data.result){
+		_text.text(value);	//改写增减板中间的数字
+		sum($('#_goodlist'));
+      }else{
+      	showalertmsg(data.error.msg,2000,'no');
+		return;
+      }
+ 	 },'json')
+}
+
+// 汇总所有商品总金额,$obj为要汇总的对象
+function sum($cont) {
+	var final_tatal=0;
+	var ischecked = 0;
+	$cont.find("li").each(function(index,el){
+		var is_checked= $(this).find("i").attr("class")=="radio_active";
+		if(is_checked){
+			ischecked++;
+			var price_true = Number( $(this).find(".value").text() );
+			var conut = Number( $(this).find(".count_bar input").val() );	//得到数量
+			final_tatal+=price_true*conut;	//算出商品总金额
+		}
+	});
+	if(ischecked == $('#_goodlist li').length){
+		$(".sum_total i").removeClass('radio_pic').addClass('radio_active');	
+	}else{
+		$(".sum_total i").removeClass('radio_active').addClass('radio_pic');	
+	}
+	$('.final_tatal').text( final_tatal.toFixed(2) );	//写到text商品总金额
+}
+</script>	
+
+</body></html>

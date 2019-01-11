@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+<meta charset="UTF-8">
+<title>我们楼的店铺</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="msapplication-tap-highlight" content="no">  
+<link href="public/css/reset.css" type="text/css" rel="Stylesheet">
+<link href="public/css/m1.css" type="text/css" rel="Stylesheet">
+<link href="public/css/m.css" type="text/css" rel="Stylesheet">
+<link href="public/css/iconfont.css" type="text/css" rel="Stylesheet">
+<script src="public/jsmobile/jquery.min.js"></script>
+<script src="public/js/icheck.min.js"></script>
+<script src="public/js/layer.js"></script>
+<script src="public/js/TouchSlide.1.1.source.js"></script>
+<script>var _interTime=3000;//轮播图切换延迟时间</script>
+<script src="public/js/index.js"></script>
+<script src="public/js/common.js"></script>
+<script src="public/js/test.js"></script>
+
+<!--滚动时间-->
+<script type="text/javascript" src="public/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="public/js/jquery.countdown.js"></script>
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function($){ 
+
+	$('div#countdown-timer').countdown("2015/8/30" , function(event) {
+		var $this = $(this);
+		switch(event.type){
+			case "seconds":
+			case "minutes":
+			case "hours":
+			case "days":
+			case "weeks":
+			case "daysLeft":
+			$this.find('span#'+event.type).html(event.value);
+			break;
+			case "finished":
+			$this.hide();
+			break;
+		}
+	});
+	$('div#countdown-timer2').countdown("2015/8/28" , function(event) {
+		var $this = $(this);
+		switch(event.type){
+			case "seconds":
+			case "minutes":
+			case "hours":
+			case "days":
+			case "weeks":
+			case "daysLeft":
+			$this.find('span#'+event.type).html(event.value);
+			break;
+			case "finished":
+			$this.hide();
+			break;
+		}
+	});
+	$('div#countdown-timer3').countdown("2015/8/26" , function(event) {
+		var $this = $(this);
+		switch(event.type){
+			case "seconds":
+			case "minutes":
+			case "hours":
+			case "days":
+			case "weeks":
+			case "daysLeft":
+			$this.find('span#'+event.type).html(event.value);
+			break;
+			case "finished":
+			$this.hide();
+			break;
+		}
+	});
+	$('div#countdown-timer4').countdown("2015/8/23" , function(event) {
+		var $this = $(this);
+		switch(event.type){
+			case "seconds":
+			case "minutes":
+			case "hours":
+			case "days":
+			case "weeks":
+			case "daysLeft":
+			$this.find('span#'+event.type).html(event.value);
+			break;
+			case "finished":
+			$this.hide();
+			break;
+		}
+	});
+	
+});
+</script>
+</head>
+<body>
+<div id="Main">
+	<div class="top_nav">
+		<div class="left">长沙</div>
+		<div class="search">
+			<select name="paytype" class="form-control1">
+				<option value="">选择楼栋</option>
+				<option value="1">大厦A座</option>
+				<option value="2">大厦B座</option>
+				<option value="3">大厦C座</option>
+				<option value="4">大厦D座</option>
+			</select>
+		</div>
+		<div class="right"> <a href=''><div class="ico_gwc"><img width="25px" src="public/images/gwc-1.png"><span>0</span></div></a></div>
+	</div>
+	<!-- 滑动图 -->
+	<div id="focus" class="focus">
+		<div class="hd">
+			<ul></ul>
+		</div>
+		<div class="bd">
+			<ul>
+				<li><a href="#"><img  src="uploads/1.jpg" /></a></li>
+				<li><a href="#"><img  src="uploads/2.jpg" /></a></li>
+				<li><a href="#"><img  src="uploads/3.jpg" /></a></li>
+				<li><a href="#"><img  src="uploads/4.jpg" /></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 滑动图完 -->
+	<ul class="ico_nav clearfix">
+		<li><a href="list.html"><div ><img width="50px" src="public/images/el.png"></div></a><h2>我们饿了</h2></li>
+		<li><a href="list.html"><div ><img width="50px" src="public/images/hl.png"></div></a><h2>我们喝了</h2></li>
+		<li><a href="list.html"><div ><img width="50px" src="public/images/xc.png"></div></a><h2>我们小吃</h2></li>
+		<li><a href="list.html"><div ><img width="50px" src="public/images/sh.png"></div></a><h2>生活用品</h2></li>
+		<li><a href="list.html"><div ><img width="50px" src="public/images/md.png"></div></a><h2>楼工厂店</h2></li>
+		<li><a href="list.html"><div ><img width="50px" src="public/images/yh.png"></div></a><h2>约会必备</h2></li>
+	</ul>
+	<div class="cl"></div>
+	<div class="grid clearfix">
+		<section class="yead1">
+			<p style="">
+				<strong style="color:inherit;font-size: 13pt;"><span style="color:inherit;font-size: 18px;font-weight: bold;">热卖商品</span></strong>
+			</p>
+		</section>
+		<ul class="mall_list">
+            <li class="clearfix"><a href="">
+			  <div class="pic"><img src="uploads/allimg/images/r1.jpg"></div>
+			  <div class="infor"> 
+				<h1>商品名称</h1>
+				<h2>已售88440 件</h2>
+				<div class="price"><span>￥8.50</span><del>￥9.90</del></div>
+			  </div>
+			  <div class="status">购买</div></a>
+			</li>  
+			<li class="clearfix"><a href="">
+			  <div class="pic"><img src="uploads/allimg/images/r3.jpg"></div>
+			  <div class="infor"> 
+				<h1>商品名称</h1>
+				<h2>已售88440 件</h2>
+				<div class="price"><span>￥99.50</span><del>￥120</del></div>
+			  </div>
+			  <div class="status">购买</div></a>
+			</li>   
+			<li class="clearfix"><a href="">
+			  <div class="pic"><img src="uploads/allimg/images/t4.jpg"></div>
+			  <div class="infor"> 
+				<h1>商品名称</h1>
+				<h2>已售88440 件</h2>
+				<div class="price"><span>￥10.5</span><del>￥15</del></div>
+			  </div>
+			  <div class="status">购买</div></a>
+			</li>   
+			<li class="clearfix"><a href="">
+			  <div class="pic"><img src="uploads/allimg/images/t1.jpg"></div>
+			  <div class="infor"> 
+				<h1>商品名称</h1>
+				<h2>已售88440 件</h2>
+				<div class="price"><span>￥4.50</span><del>￥6</del></div>
+			  </div>
+			  <div class="status">购买</div></a>
+			</li>   
+        </ul>
+	</div>
+	<div class="cl"></div>
+	
+	<div class="cl"></div>
+	<div class="grid clearfix">
+		<section class="yead1">
+			<p style="">
+				<strong style="color:inherit;font-size: 13pt;"><span style="color:inherit;font-size: 18px;font-weight: bold;">约会必备</span></strong>
+			</p>
+		</section>
+		<ul class="mall_list">
+            <li class="clearfix"><a href="">
+			  <div class="pic"><img src="uploads/allimg/images/r1.jpg"></div>
+			  <div class="infor"> 
+				<h1>商品名称</h1>
+				<h2>已售88440 件</h2>
+				<div class="price"><span>￥8.50</span><del>￥9.90</del></div>
+			  </div>
+			  <div class="status">购买</div></a>
+			</li>  
+			<li class="clearfix"><a href="">
+			  <div class="pic"><img src="uploads/allimg/images/r3.jpg"></div>
+			  <div class="infor"> 
+				<h1>商品名称</h1>
+				<h2>已售88440 件</h2>
+				<div class="price"><span>￥99.50</span><del>￥120</del></div>
+			  </div>
+			  <div class="status">购买</div></a>
+			</li>   
+			<li class="clearfix"><a href="">
+			  <div class="pic"><img src="uploads/allimg/images/t4.jpg"></div>
+			  <div class="infor"> 
+				<h1>商品名称</h1>
+				<h2>已售88440 件</h2>
+				<div class="price"><span>￥10.5</span><del>￥15</del></div>
+			  </div>
+			  <div class="status">购买</div></a>
+			</li>   
+			<li class="clearfix"><a href="">
+			  <div class="pic"><img src="uploads/allimg/images/t1.jpg"></div>
+			  <div class="infor"> 
+				<h1>商品名称</h1>
+				<h2>已售88440 件</h2>
+				<div class="price"><span>￥4.50</span><del>￥6</del></div>
+			  </div>
+			  <div class="status">购买</div></a>
+			</li>   
+        </ul>
+		
+	</div>
+	
+</div>
+<div class="sidebar" >
+	<nav>
+		<a href="index.html"> <div ><img width="25px" src="public/images/bj.png"></div> <h2>主页</h2> </a>
+		<a href="hd.html"> <div ><img width="25px" src="public/images/hd1.png"></div> <h2>活动</h2> </a>
+		<a href="cart.html"> <div ><img width="25px" src="public/images/gwc.png"></div> <h2>购物车</h2> </a>
+		<a href="my.html"> <div ><img width="25px" src="public/images/wd1.png"></div> <h2>我的</h2> </a>
+	</nav>	
+</div>
+<div class="bg_black" style="width:100%; height:100%; position:fixed; top:0; left:0;"> </div> 
+  
+
+
+
+
+<script src="public/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript">
+</body>
+</html>

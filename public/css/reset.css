@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+/*------------------------------------*\
+    基础定义 
+\*------------------------------------*/
+
+html {font-size:62.5%;padding: 0;
+margin: 0;}
+/**
+    计算公式:
+        rem, 1rem = 10px
+        边距百分比, 30px / 640px = 4.6875%
+**/
+a{ color:#364854;}
+*{PADDING:0; MARGIN: 0px; border:0;font-size: 1.6rem; font-family:"Microsoft YaHei","SimSun",Arial, Helvetica, sans-serif;}
+
+H1,H2,H3,H4,H5,H6,H7,strong{ font-weight: normal;}
+li {list-style-type:none;}
+
+.cl { /* 此类应当放在 div 或 break 元素上，而且该元素应当是完全包含浮动的容器关闭之前的最后一个元素 */
+    clear:both;
+    height:0px;
+    font-size: 0px;
+    line-height: 0px;
+}
+
+
+.h10{ height:10px;}
+.h15{ height:15px;}
+.h20{ height:20px;}
+.h30{ height:30px;}
+.h50{ height:50px;}
+
+.p15{padding:0 15px;}
+.p20{padding:0 20px;}
+
+:-webkit-input-placeholder { color:#d1d1d1;　}
+:-moz-placeholder { color:#d1d1d1;　　}
+::-moz-placeholder { color:#d1d1d1;　　}
+:-ms-input-placeholder { color:#d1d1d1;　}
+
+.r{border-radius: 50%;}
+
+.clearfix:after{
+visibility: hidden;
+display: block;
+font-size: 0;
+content: " ";
+clear: both;
+height: 0;
+}
+
+a:hover,a:active{text-decoration: none;}
+
+.fl{float: left;}
+.fr{float: right;}
+
+input:not([type]), input[type="email" i], input[type="number" i], input[type="password" i], input[type="tel" i], input[type="url" i], input[type="text" i] {
+    padding: 0;
+}

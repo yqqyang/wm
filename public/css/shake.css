@@ -1,0 +1,243 @@
+/* 摇一摇 */
+html,body{width: 100%;height: 100%;}
+body#shake{background: #fe7004;overflow: hidden;}
+.shake{display: none;text-align: center;position: absolute; width:100%; height:100%; background:url("shake-bg.jpg")/*tpa=http://m.clofood.com/public/images/shake-bg.jpg*/ no-repeat center top #fe7004; -webkit-background-size:100% auto;
+background-size:100% auto;overflow: hidden; }
+/********************/
+.phone{width:110px; height:110px; border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;-o-border-radius:50%;
+ background-color: rgba(0,0,0,0); position: absolute; left: 0; top: 0;} 
+.phone_bg,.phone_bg0{ width:110px; height:110px; border-radius:50%;-webkit-border-radius:50%;-moz-border-radius:50%;-o-border-radius:50%;
+position: absolute;left: 50%;top: 70px;margin-left: -55px; background: #fff;}
+.phone_bg0{ animation: dome2 2s infinite;-webkit-animation: dome2 2s infinite;-moz-animation: dome2 2s infinite;-ms-animation: dome2 2s infinite;-o-animation: dome2 2s infinite; }
+.phone_bg img{animation: dome 2s infinite;-webkit-animation: dome 2s infinite;-moz-animation: dome 2s infinite;-ms-animation: dome 2s infinite;-o-animation: dome 2s infinite; width: 50%;margin: 15px auto 0;}
+.phone_bg span{ padding-top: 10px; display: block;font-size: 1.3rem;color: #f2950b; position:relative;}		
+			@keyframes dome {
+				0% {
+					transform: rotate(-8deg);
+					-webkit-transform: rotate(-8deg);
+					-moz-transform: rotate(-8deg);
+					-o-transform: rotate(-8deg);
+				}
+				50% {
+					transform: rotate(8deg);
+					-webkit-transform: rotate(8deg);
+					-moz-transform: rotate(8deg);
+					-o-transform: rotate(8deg);
+				}
+				100% {
+					transform: rotate(-8deg);
+					-webkit-transform: rotate(-8deg);
+					-moz-transform: rotate(-8deg);
+					-o-transform: rotate(-8deg);
+				}
+			}
+			@-webkit-keyframes dome {
+				0% {
+					transform: rotate(-8deg);
+					-webkit-transform: rotate(-8deg);
+					-moz-transform: rotate(-8deg);
+					-o-transform: rotate(-8deg);
+				}
+				50% {
+					transform: rotate(8deg);
+					-webkit-transform: rotate(8deg);
+					-moz-transform: rotate(8deg);
+					-o-transform: rotate(8deg);
+				}
+				100% {
+					transform: rotate(-8deg);
+					-webkit-transform: rotate(-8deg);
+					-moz-transform: rotate(-8deg);
+					-o-transform: rotate(-8deg);
+				}
+			}
+			@-moz-keyframes dome {
+				0% {
+					transform: rotate(-8deg);
+					-webkit-transform: rotate(-8deg);
+					-moz-transform: rotate(-8deg);
+					-o-transform: rotate(-8deg);
+				}
+				50% {
+					transform: rotate(8deg);
+					-webkit-transform: rotate(8deg);
+					-moz-transform: rotate(8deg);
+					-o-transform: rotate(8deg);
+				}
+				100% {
+					transform: rotate(-8deg);
+					-webkit-transform: rotate(-8deg);
+					-moz-transform: rotate(-8deg);
+					-o-transform: rotate(-8deg);
+				}
+			}
+			@-o-keyframes dome {
+				0% {
+					transform: rotate(-8deg);
+					-webkit-transform: rotate(-8deg);
+					-moz-transform: rotate(-8deg);
+					-o-transform: rotate(-8deg);
+				}
+				50% {
+					transform: rotate(8deg);
+					-webkit-transform: rotate(8deg);
+					-moz-transform: rotate(8deg);
+					-o-transform: rotate(8deg);
+				}
+				100% {
+					transform: rotate(-8deg);
+					-webkit-transform: rotate(-8deg);
+					-moz-transform: rotate(-8deg);
+					-o-transform: rotate(-8deg);
+				}
+			}
+			@keyframes dome2 {
+				0% {
+					transform: scale(1.25);
+					-webkit-transform:  scale(1.25);
+					-moz-transform:  scale(1.25);
+					-o-transform:  scale(1.25);
+					opacity: 0.5;
+				}
+				100% {
+					transform: scale(1.5);
+					-webkit-transform:  scale(1.5);
+					-moz-transform:  scale(1.5);
+					-o-transform:  scale(1.5);
+					opacity: 0;
+				}
+			}
+			@keyframes dome2 {
+				0% {
+					transform: scale(1.25);
+					-webkit-transform:  scale(1.25);
+					-moz-transform:  scale(1.25);
+					-o-transform:  scale(1.25);
+					opacity: 0.5;
+				}
+				100% {
+					transform: scale(1.5);
+					-webkit-transform:  scale(1.5);
+					-moz-transform:  scale(1.5);
+					-o-transform:  scale(1.5);
+					opacity: 0;
+				}
+			}
+			@-webkit-keyframes dome2 {
+				0% {
+					transform: scale(1.25);
+					-webkit-transform:  scale(1.25);
+					-moz-transform:  scale(1.25);
+					-o-transform:  scale(1.25);
+					opacity: 0.5;
+				}
+				100% {
+					transform: scale(1.5);
+					-webkit-transform:  scale(1.5);
+					-moz-transform:  scale(1.5);
+					-o-transform:  scale(1.5);
+					opacity: 0;
+				}
+			}
+			@-moz-keyframes dome2 {
+				0% {
+					transform: scale(1.25);
+					-webkit-transform:  scale(1.25);
+					-moz-transform:  scale(1.25);
+					-o-transform:  scale(1.25);
+					opacity: 0.5;
+				}
+				100% {
+					transform: scale(1.5);
+					-webkit-transform:  scale(1.5);
+					-moz-transform:  scale(1.5);
+					-o-transform:  scale(1.5);
+					opacity: 0;
+				}
+			}
+			@-o-keyframes dome2 {
+				0% {
+					transform: scale(1.25);
+					-webkit-transform:  scale(1.25);
+					-moz-transform:  scale(1.25);
+					-o-transform:  scale(1.25);
+					opacity: 0.5;
+				}
+				100% {
+					transform: scale(1.5);
+					-webkit-transform:  scale(1.5);
+					-moz-transform:  scale(1.5);
+					-o-transform:  scale(1.5);
+					opacity: 0;
+				}
+			}
+
+
+
+
+
+
+
+
+
+
+
+/********************/
+
+.shake_infor{ width:64%;   color:#fff; position: absolute;left: 50%;bottom: 5%;margin-left: -120px; width: 240px;}
+
+.shake_infor .content{width: 100%;background:#feb609;border-radius:50px;padding:5px;margin-bottom: 5px;}
+.shake_infor h1{color: #4e2b0f;font-size: 1.3rem;}
+.shake_infor .time{color: #ff0000;font-size: 2.3rem;line-height: 110%;}
+.shake_infor h2{color: #fff;font-size: 1.3rem;}
+.shake_infor h2 span{color: #ff0;font-size: 1.8rem;margin: 0 3px;}
+
+
+.mask_layer{display: none;position: absolute; width:100%; height:100%; background:rgba(0,0,0,.8)}
+
+/* 摇一摇弹窗 */
+.pop_yy{ z-index: 10; display: none; position: absolute;left: 50%;top: 50px;margin-left: -160px; width:320px; height:430px; background:url("prize.png")/*tpa=http://m.clofood.com/public/images/prize.png*/ no-repeat center top; background-size:100% auto; text-align: center;}
+.pop_yy .title{ margin-top: 62px;margin-bottom: 20px; text-align: center; color:#fff;}
+
+.pop_cont .tip{  padding: 0 8px;}
+.mt10{ margin-top: 10px;}
+.pop_yy .tit{ width: 70%;margin: 10px auto 20px;}
+.pop_yy .tit  p{line-height: 160%;font-size: 1.5rem;}
+.pop_yy .tit2  p{line-height: 100%;}
+
+.pop_yy .ico{width: 33%;margin: 0 auto}
+.pop_yy .tit .big{ font-size: 3.8rem; color: #ff3a0a; font-style:italic; font-weight:bold; padding:0 1%;}
+.pop_yy .tit2 .big{ line-height: 4.8rem; }
+.pop_yy a.detail{ display:block; width:120px; height: 30px;line-height: 30px; text-align: center; background:#364854; border-radius:6px; color:#fff; font-size: 1.4rem;margin: 10px auto 0}
+
+/* 规则 */
+.gz{ display: none; position: absolute;left: 50%;top: 60px;margin-left: -45%; width:90%; height:80%; background:url("bg_pop2.png")/*tpa=http://m.clofood.com/public/images/bg_pop2.png*/;-webkit-background-size: 10px;
+background-size: 15px; padding: 7% 15px 5%;border-radius: 10px;}
+.gz  .txt{height: 95%;overflow:auto;text-align: left;}
+.gz p{font-size: 1.3rem; line-height: 162%; color: #333;}
+.gz h2{font-size: 1.5rem;color: #f00; margin-bottom: 5px;}
+.gz i.icon-close{font-size: 2.3rem;color: #fff;position: absolute;right: 10px;top: 0px;}
+
+.coin{ 
+  width: 30px;
+  height:30px;
+background: url("coin.png")/*tpa=http://m.clofood.com/public/images/coin.png*/  -0px -0px no-repeat;-webkit-background-size: cover;
+background-size: cover;position: absolute;top: -50px;}
+
+body#shake .top_nav{width: 100%;position: absolute;z-index: 9;}
+
+.loading{background: #fe9c08;color: #fff;font-size: 16px;text-align: center;padding: 20px;border-radius: 50%; z-index: 9;
+	width: 140px; height: 140px;margin-left: -70px;margin-top: -70px;
+position: absolute; left: 50%;top: 50%;padding-top: 45px;
+-webkit-animation: zoom1 0.2s infinite ease-in-out both;
+animation: zoom1 0.2s infinite ease-in-out both;}
+
+@-webkit-keyframes zoom1 {
+    0%{-webkit-transform:scale(0.97) }
+    100% {-webkit-transform:scale(1) }
+}
+
+@keyframes zoom1 {
+    0%{transform:scale(0.97) }
+    100% {transform:scale(1) }
+}
